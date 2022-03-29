@@ -57,6 +57,7 @@ export interface KonversoInterface {
     BotInitMessage?: BotInitMessage;
     AssistantMode?: boolean;
     InputPlaceHolder: WildCardObjectArray;
+    InputNumberPlaceHolder: WildCardObjectArray;
 }
 /**
  *  Inteface setting for authentication
@@ -137,6 +138,7 @@ export interface OpenChatBotResponse {
     medias?: [OpenChatBotMedia];
     context?: WildCardObject[];
     suggestions?: OpenChatBotAction[];
+    endOfTopic?: boolean;
 }
 interface OpenChatBotMeta {
     version: number;

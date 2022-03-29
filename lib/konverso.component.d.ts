@@ -5,6 +5,8 @@ export declare class KonversoComponent implements OnInit {
     private service;
     _ready: EventEmitter<boolean>;
     ready: EventEmitter<boolean>;
+    sended: EventEmitter<boolean>;
+    showInput: boolean;
     query: string;
     isMobile: boolean;
     assets: DefaultAssets;
@@ -17,8 +19,10 @@ export declare class KonversoComponent implements OnInit {
     LastUserInput: UserInput;
     LastBotAnswer: OpenChatBotResponse;
     PlaceHolder: string[];
+    NumberPlaceHolder: string[];
     Welcome: string;
     constructor(service: KonversoService);
+    private triggerKbotResponse;
     ngOnInit(): void;
     send($event: UserInput): Promise<boolean>;
     sendBotCommand($event: string, push?: boolean): Promise<void>;

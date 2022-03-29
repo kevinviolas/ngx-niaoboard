@@ -10,6 +10,7 @@ export declare class KonversoService {
     firstUsageStory: string[];
     ColorSet: ColorSet;
     PlaceHolder: string[];
+    NumberPlaceHolder: string[];
     AssistantMode: boolean;
     Welcome: string;
     readyState: boolean;
@@ -21,12 +22,21 @@ export declare class KonversoService {
     private endpoint;
     _auth: boolean;
     lang: BehaviorSubject<string>;
+    customData: BehaviorSubject<{
+        [key: string]: any;
+    }>;
+    emulationTrigger: BehaviorSubject<any>;
     constructor(config: KonversoInterface, http: HttpClient);
     /**
      * Send Query To backend server and get a response
      * @param query
      */
     send(query: string): Promise<string | any>;
+    /**
+     * Emulate user entry Query To backend server and get a response
+     * @param query
+     */
+    sendTriggerEmulation(query: string): Promise<void>;
     /**
      * @private
      * Generate Header for backend call
