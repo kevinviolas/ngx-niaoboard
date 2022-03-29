@@ -254,6 +254,7 @@ class Scanner {
     constructor(str) {
         this.pos = 0;
         this.string = str;
+        this.tail = str;
     }
     eos() {
         return this.tail === '';
