@@ -155,7 +155,7 @@ const parseTemplate = (template, tags) => {
         closingTagRe = new RegExp('\\s*' + escapeRegExp(tagsToCompile[1]));
         closingCurlyRe = new RegExp('\\s*' + escapeRegExp('}' + tagsToCompile[1]));
     };
-    compileTags(tags || Mustache.tags);
+    compileTags(tags || BARBE.tags);
     const scanner = new Scanner(template);
     let start, type, value, chr, token, openSection;
     while (!scanner.eos()) {
@@ -363,7 +363,7 @@ class Writer {
     }
     parse(template, tags) {
         const cache = this.templateCache;
-        const cacheKey = template + ':' + (tags || Mustache.tags).join(':');
+        const cacheKey = template + ':' + (tags || BARBE.tags).join(':');
         const isCacheEnabled = typeof cache !== 'undefined';
         let tokens = isCacheEnabled ? cache.get(cacheKey) : undefined;
         if (tokens === undefined) {
@@ -505,14 +505,14 @@ class Writer {
         return config && typeof config === 'object' && !isArray(config) ? config.escape : undefined;
     }
     escapedValue(token, context, config) {
-        const escape = this.getConfigEscape(config) || Mustache.escape;
+        const escape = this.getConfigEscape(config) || BARBE.escape;
         const value = context.lookup(token[1]);
         if (value != null) {
-            return (typeof value === 'number' && escape === Mustache.escape) ? String(value) : escape(value);
+            return (typeof value === 'number' && escape === BARBE.escape) ? String(value) : escape(value);
         }
     }
 }
-class Mustache {
+class BARBE {
     constructor() {
         this.name = 'MY F**KING MUSTACHE LIBRARY FOR ANGULAR';
         this.version = 'ECLATER';
@@ -540,13 +540,13 @@ class Mustache {
         this._Writer.clearCache();
     }
 }
-Mustache.tags = ['{{', '}}'];
-Mustache.escape = escapeHtml;
-Mustache.Scanner = Scanner;
-Mustache.Context = Context;
-Mustache.Writer = Writer;
-const mustache = new Mustache();
+BARBE.tags = ['{{', '}}'];
+BARBE.escape = escapeHtml;
+BARBE.Scanner = Scanner;
+BARBE.Context = Context;
+BARBE.Writer = Writer;
 
+const barbe = new BARBE();
 class KonversoService {
     constructor(config, http) {
         this.http = http;
@@ -647,7 +647,7 @@ class KonversoService {
                         this.NumberPlaceHolder = config.InputNumberPlaceHolder[this.locale];
                     }
                     if (config.CustomWelcome && config.BotInitMessage.Welcome && config.BotInitMessage.Welcome[this.locale]) {
-                        this.Welcome = mustache.render(config.BotInitMessage.Welcome[this.locale], user);
+                        this.Welcome = barbe.render(config.BotInitMessage.Welcome[this.locale], user);
                     }
                     if (user?.token) {
                         this.token.next(user?.token);
@@ -660,7 +660,7 @@ class KonversoService {
                             config?.BotInitMessage?.FirstUsage[this.locale]) {
                             this.firstUsageStory = [];
                             for (const history of config.BotInitMessage.FirstUsage[this.locale]) {
-                                this.firstUsageStory.push(mustache.render(history, user));
+                                this.firstUsageStory.push(barbe.render(history, user));
                             }
                         }
                     }

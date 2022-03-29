@@ -1,4 +1,4 @@
-export declare class Mustache {
+export declare class BARBE {
     static tags: string[];
     static escape: any;
     static Scanner: any;
@@ -13,5 +13,3 @@ export declare class Mustache {
     render(template: any, view: any, partials?: any, config?: any): any;
     clearCache(): void;
 }
-export declare const mustache: Mustache;
-export default mustache;
