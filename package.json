@@ -2,24 +2,33 @@
   "name": "konverso",
   "version": "0.0.1",
   "peerDependencies": {
-    "@angular/common": "~9.0.7",
-    "@angular/core": "~9.0.7"
+    "@angular/common": ">9.x <14.x",
+    "@angular/core": ">9.x <14.x"
   },
   "dependencies": {
     "@pixi/filter-kawase-blur": "^4.1.3",
-    "mustache": "^4.2.0",
-    "pixi.js": "^6.1.3",
+    "mustache": ">=4.2.0",
     "simplex-noise": "^3.0.0",
-    "tslib": "~1.10.0"
+    "tslib": ">=1.10.0"
   },
-  "main": "bundles/konverso.umd.js",
-  "module": "fesm5/konverso.js",
-  "es2015": "fesm2015/konverso.js",
-  "esm5": "esm5/konverso.js",
-  "esm2015": "esm2015/konverso.js",
-  "fesm5": "fesm5/konverso.js",
-  "fesm2015": "fesm2015/konverso.js",
+  "module": "fesm2015/konverso.mjs",
+  "es2020": "fesm2020/konverso.mjs",
+  "esm2020": "esm2020/konverso.mjs",
+  "fesm2020": "fesm2020/konverso.mjs",
+  "fesm2015": "fesm2015/konverso.mjs",
   "typings": "konverso.d.ts",
-  "metadata": "konverso.metadata.json",
+  "exports": {
+    "./package.json": {
+      "default": "./package.json"
+    },
+    ".": {
+      "types": "./konverso.d.ts",
+      "esm2020": "./esm2020/konverso.mjs",
+      "es2020": "./fesm2020/konverso.mjs",
+      "es2015": "./fesm2015/konverso.mjs",
+      "node": "./fesm2015/konverso.mjs",
+      "default": "./fesm2020/konverso.mjs"
+    }
+  },
   "sideEffects": false
 }
