@@ -150,6 +150,7 @@ const parseTemplate = (template, tags) => {
         return { openingTagRe, closingTagRe, closingCurlyRe };
     };
     let { openingTagRe, closingTagRe, closingCurlyRe } = compileTags(tags || BARBE.tags);
+    console.log('--------------_> TAG DEBUG', openingTagRe, closingTagRe, closingCurlyRe);
     const scanner = new Scanner(template);
     let start, type, value, chr, token, openSection;
     while (!scanner.eos()) {
