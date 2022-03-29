@@ -137,7 +137,6 @@ const parseTemplate = (template, tags) => {
         hasTag = false;
         nonSpace = false;
     };
-    let openingTagRe, closingTagRe, closingCurlyRe;
     const compileTags = (tagsToCompile) => {
         if (typeof tagsToCompile === 'string') {
             tagsToCompile = tagsToCompile.split(spaceRe, 2);
@@ -148,8 +147,9 @@ const parseTemplate = (template, tags) => {
         openingTagRe = new RegExp(escapeRegExp(tagsToCompile[0]) + '\\s*');
         closingTagRe = new RegExp('\\s*' + escapeRegExp(tagsToCompile[1]));
         closingCurlyRe = new RegExp('\\s*' + escapeRegExp('}' + tagsToCompile[1]));
+        return { openingTagRe, closingTagRe, closingCurlyRe };
     };
-    compileTags(tags || BARBE.tags);
+    let { openingTagRe, closingTagRe, closingCurlyRe } = compileTags(tags || BARBE.tags);
     const scanner = new Scanner(template);
     let start, type, value, chr, token, openSection;
     while (!scanner.eos()) {
