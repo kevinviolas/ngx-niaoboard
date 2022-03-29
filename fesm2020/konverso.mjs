@@ -17,12 +17,12 @@ import { FormsModule } from '@angular/forms';
  ***********************************************************/
 
 /***********************************************************
-**  @project
-**  @file
-**  @author Brice Daupiard <brice.daupiard@nowbrains.com>
-**  @Date 29/03/2022
-**  @Description
-***********************************************************/
+ **  @project
+ **  @file
+ **  @author Brice Daupiard <brice.daupiard@nowbrains.com>
+ **  @Date 29/03/2022
+ **  @Description
+ ***********************************************************/
 /*!
  * mustache.js - Logic-less {{mustache}} templates with JavaScript
  * http://github.com/janl/mustache.js
@@ -76,7 +76,7 @@ var entityMap = {
     '<': '&lt;',
     '>': '&gt;',
     '"': '&quot;',
-    "'": '&#39;',
+    '\'': '&#39;',
     '/': '&#x2F;',
     '`': '&#x60;',
     '=': '&#x3D;'
@@ -118,8 +118,9 @@ var tagRe = /#|\^|\/|>|\{|&|=|!/;
  * eg a value of 2 indicates the partial is the third tag on this line.
  */
 function parseTemplate(template, tags) {
-    if (!template)
+    if (!template) {
         return [];
+    }
     var lineHasNonSpace = false;
     var sections = []; // Stack to hold section tokens
     var tokens = []; // Buffer to hold the tokens
@@ -132,8 +133,9 @@ function parseTemplate(template, tags) {
     // if there was a {{#tag}} on it and otherwise only space.
     function stripSpace() {
         if (hasTag && !nonSpace) {
-            while (spaces.length)
+            while (spaces.length) {
                 delete tokens[spaces.pop()];
+            }
         }
         else {
             spaces = [];
@@ -143,10 +145,12 @@ function parseTemplate(template, tags) {
     }
     var openingTagRe, closingTagRe, closingCurlyRe;
     function compileTags(tagsToCompile) {
-        if (typeof tagsToCompile === 'string')
+        if (typeof tagsToCompile === 'string') {
             tagsToCompile = tagsToCompile.split(spaceRe, 2);
-        if (!isArray(tagsToCompile) || tagsToCompile.length !== 2)
+        }
+        if (!isArray(tagsToCompile) || tagsToCompile.length !== 2) {
             throw new Error('Invalid tags: ' + tagsToCompile);
+        }
         openingTagRe = new RegExp(escapeRegExp(tagsToCompile[0]) + '\\s*');
         closingTagRe = new RegExp('\\s*' + escapeRegExp(tagsToCompile[1]));
         closingCurlyRe = new RegExp('\\s*' + escapeRegExp('}' + tagsToCompile[1]));
@@ -182,8 +186,9 @@ function parseTemplate(template, tags) {
             }
         }
         // Match the opening tag.
-        if (!scanner.scan(openingTagRe))
+        if (!scanner.scan(openingTagRe)) {
             break;
+        }
         hasTag = true;
         // Get the tag type.
         type = scanner.scan(tagRe) || 'name';
@@ -204,8 +209,9 @@ function parseTemplate(template, tags) {
             value = scanner.scanUntil(closingTagRe);
         }
         // Match the closing tag.
-        if (!scanner.scan(closingTagRe))
+        if (!scanner.scan(closingTagRe)) {
             throw new Error('Unclosed tag at ' + scanner.pos);
+        }
         if (type == '>') {
             token = [type, value, start, scanner.pos, indentation, tagIndex, lineHasNonSpace];
         }
@@ -220,10 +226,12 @@ function parseTemplate(template, tags) {
         else if (type === '/') {
             // Check section nesting.
             openSection = sections.pop();
-            if (!openSection)
+            if (!openSection) {
                 throw new Error('Unopened section "' + value + '" at ' + start);
-            if (openSection[1] !== value)
+            }
+            if (openSection[1] !== value) {
                 throw new Error('Unclosed section "' + openSection[1] + '" at ' + start);
+            }
         }
         else if (type === 'name' || type === '{' || type === '&') {
             nonSpace = true;
@@ -236,8 +244,9 @@ function parseTemplate(template, tags) {
     stripSpace();
     // Make sure there are no open sections when we're done.
     openSection = sections.pop();
-    if (openSection)
+    if (openSection) {
         throw new Error('Unclosed section "' + openSection[1] + '" at ' + scanner.pos);
+    }
     return nestTokens(squashTokens(tokens));
 }
 /**
@@ -314,8 +323,9 @@ Scanner.prototype.eos = function eos() {
  */
 Scanner.prototype.scan = function scan(re) {
     var match = this.tail.match(re);
-    if (!match || match.index !== 0)
+    if (!match || match.index !== 0) {
         return '';
+    }
     var string = match[0];
     this.tail = this.tail.substring(string.length);
     this.pos += string.length;
@@ -393,9 +403,10 @@ Context.prototype.lookup = function lookup(name) {
                  * of an autoboxed primitive, such as the length of a string.
                  **/
                 while (intermediateValue != null && index < names.length) {
-                    if (index === names.length - 1)
+                    if (index === names.length - 1) {
                         lookupHit = (hasProperty(intermediateValue, names[index])
                             || primitiveHasOwnProperty(intermediateValue, names[index]));
+                    }
                     intermediateValue = intermediateValue[names[index++]];
                 }
             }
@@ -430,8 +441,9 @@ Context.prototype.lookup = function lookup(name) {
         }
         cache[name] = value;
     }
-    if (isFunction(value))
+    if (isFunction(value)) {
         value = value.call(this.view);
+    }
     return value;
 };
 /**
@@ -522,20 +534,27 @@ Writer.prototype.renderTokens = function renderTokens(tokens, context, partials,
         value = undefined;
         token = tokens[i];
         symbol = token[0];
-        if (symbol === '#')
+        if (symbol === '#') {
             value = this.renderSection(token, context, partials, originalTemplate, config);
-        else if (symbol === '^')
+        }
+        else if (symbol === '^') {
             value = this.renderInverted(token, context, partials, originalTemplate, config);
-        else if (symbol === '>')
+        }
+        else if (symbol === '>') {
             value = this.renderPartial(token, context, partials, config);
-        else if (symbol === '&')
+        }
+        else if (symbol === '&') {
             value = this.unescapedValue(token, context);
-        else if (symbol === 'name')
+        }
+        else if (symbol === 'name') {
             value = this.escapedValue(token, context, config);
-        else if (symbol === 'text')
+        }
+        else if (symbol === 'text') {
             value = this.rawValue(token);
-        if (value !== undefined)
+        }
+        if (value !== undefined) {
             buffer += value;
+        }
     }
     return buffer;
 };
@@ -548,8 +567,9 @@ Writer.prototype.renderSection = function renderSection(token, context, partials
     function subRender(template) {
         return self.render(template, context, partials, config);
     }
-    if (!value)
+    if (!value) {
         return;
+    }
     if (isArray(value)) {
         for (var j = 0, valueLength = value.length; j < valueLength; ++j) {
             buffer += this.renderTokens(token[4], context.push(value[j]), partials, originalTemplate, config);
@@ -559,12 +579,14 @@ Writer.prototype.renderSection = function renderSection(token, context, partials
         buffer += this.renderTokens(token[4], context.push(value), partials, originalTemplate, config);
     }
     else if (isFunction(value)) {
-        if (typeof originalTemplate !== 'string')
+        if (typeof originalTemplate !== 'string') {
             throw new Error('Cannot use higher-order sections without the original template');
+        }
         // Extract the portion of the original template that the section contains.
         value = value.call(context.view, originalTemplate.slice(token[3], token[5]), subRender);
-        if (value != null)
+        if (value != null) {
             buffer += value;
+        }
     }
     else {
         buffer += this.renderTokens(token[4], context, partials, originalTemplate, config);
@@ -575,8 +597,9 @@ Writer.prototype.renderInverted = function renderInverted(token, context, partia
     var value = context.lookup(token[1]);
     // Use JavaScript's definition of falsy. Include empty arrays.
     // See https://github.com/janl/mustache.js/issues/186
-    if (!value || (isArray(value) && value.length === 0))
+    if (!value || (isArray(value) && value.length === 0)) {
         return this.renderTokens(token[4], context, partials, originalTemplate, config);
+    }
 };
 Writer.prototype.indentPartial = function indentPartial(partial, indentation, lineHasNonSpace) {
     var filteredIndentation = indentation.replace(/[^ \t]/g, '');
@@ -589,8 +612,9 @@ Writer.prototype.indentPartial = function indentPartial(partial, indentation, li
     return partialByNl.join('\n');
 };
 Writer.prototype.renderPartial = function renderPartial(token, context, partials, config) {
-    if (!partials)
+    if (!partials) {
         return;
+    }
     var tags = this.getConfigTags(config);
     var value = isFunction(partials) ? partials(token[1]) : partials[token[1]];
     if (value != null) {
@@ -607,14 +631,16 @@ Writer.prototype.renderPartial = function renderPartial(token, context, partials
 };
 Writer.prototype.unescapedValue = function unescapedValue(token, context) {
     var value = context.lookup(token[1]);
-    if (value != null)
+    if (value != null) {
         return value;
+    }
 };
 Writer.prototype.escapedValue = function escapedValue(token, context, config) {
     var escape = this.getConfigEscape(config) || mustache.escape;
     var value = context.lookup(token[1]);
-    if (value != null)
+    if (value != null) {
         return (typeof value === 'number' && escape === mustache.escape) ? String(value) : escape(value);
+    }
 };
 Writer.prototype.rawValue = function rawValue(token) {
     return token[1];
@@ -707,12 +733,12 @@ class KonversoService {
         this.firstVisit = false;
         this.AssistantMode = false;
         this.readyState = false;
-        this.token = new BehaviorSubject(null);
-        // tslint:disable-next-line:variable-name
-        this._token = this.token.asObservable();
         this.lang = new BehaviorSubject('');
         this.customData = new BehaviorSubject(null);
         this.emulationTrigger = new BehaviorSubject(null);
+        this.token = new BehaviorSubject(null);
+        // tslint:disable-next-line:variable-name
+        this._token = this.token.asObservable();
         this.buildHeaders();
         this.initInstance(config);
     }

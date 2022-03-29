@@ -1,10 +1,10 @@
 /***********************************************************
-**  @project
-**  @file
-**  @author Brice Daupiard <brice.daupiard@nowbrains.com>
-**  @Date 29/03/2022
-**  @Description
-***********************************************************/
+ **  @project
+ **  @file
+ **  @author Brice Daupiard <brice.daupiard@nowbrains.com>
+ **  @Date 29/03/2022
+ **  @Description
+ ***********************************************************/
 /*!
  * mustache.js - Logic-less {{mustache}} templates with JavaScript
  * http://github.com/janl/mustache.js
@@ -27,4 +27,4 @@ declare var mustache: {
      */
     templateCache: any;
 };
-export default mustache;
+export { mustache };
