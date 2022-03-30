@@ -405,7 +405,8 @@
               -o-animation: fadeinanswer 0.4s ease-in 3.2s both; /* Opera */
               grid-area: bot-input-wrapper;
   
-              input {
+              textarea {
+                height: 139px;
                 text-align: left;
                 display: inline-block;
                 padding: 14px;
@@ -418,6 +419,7 @@
                 border-radius: 8px;
                 //margin-right: 10px;
                 margin-bottom: 15px;
+                resize: none;
               }
   
               .bot-container-btn {
