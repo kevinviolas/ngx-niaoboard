@@ -759,12 +759,12 @@ class TranslateService {
         this.lang = {
             'fr': {
                 'GO': `C'est parti`,
-                'SEND': 'Envoyer',
+                'SEND': 'Envoyer mon message',
                 'SELECT': 'Vous devez sélectionner une réponse',
             },
             'en': {
                 'GO': `Let's go`,
-                'SEND': 'Send',
+                'SEND': 'Send my message',
                 'SELECT': 'You must select an answer',
             }
         };
