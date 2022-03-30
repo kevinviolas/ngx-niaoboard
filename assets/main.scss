@@ -437,8 +437,9 @@
                 border: none;
                 border-radius: 8px;
                 cursor: pointer;
-                display: flex;
+                display: inline-flex;
                 height: 37px;
+                justify-items: center;
                 padding: 8px;
                 width: 30%;
               }
