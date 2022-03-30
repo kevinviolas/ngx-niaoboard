@@ -8,10 +8,11 @@ import * as i4 from "./pipe/safe-html.pipe";
 import * as i5 from "@angular/forms";
 import * as i6 from "@angular/common/http";
 import * as i7 from "@angular/common";
+import * as i8 from "nowboard-icon";
 export declare class KonversoModule {
     constructor(parentModule?: KonversoModule);
     static forRoot(config: KonversoInterface): ModuleWithProviders<KonversoModule>;
     static ɵfac: i0.ɵɵFactoryDeclaration<KonversoModule, [{ optional: true; skipSelf: true; }]>;
-    static ɵmod: i0.ɵɵNgModuleDeclaration<KonversoModule, [typeof i1.KonversoComponent, typeof i2.DesktopFullScreenComponent, typeof i3.FirstVisitComponent, typeof i4.SafeHtmlPipe], [typeof i5.FormsModule, typeof i6.HttpClientModule, typeof i7.CommonModule], [typeof i1.KonversoComponent]>;
+    static ɵmod: i0.ɵɵNgModuleDeclaration<KonversoModule, [typeof i1.KonversoComponent, typeof i2.DesktopFullScreenComponent, typeof i3.FirstVisitComponent, typeof i4.SafeHtmlPipe], [typeof i5.FormsModule, typeof i6.HttpClientModule, typeof i7.CommonModule, typeof i8.NowboardIconModule], [typeof i1.KonversoComponent, typeof i8.NowboardIconModule]>;
     static ɵinj: i0.ɵɵInjectorDeclaration<KonversoModule>;
 }
