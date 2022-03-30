@@ -423,6 +423,7 @@
               .bot-container-btn {
                 align-items: center;
                 display: flex;
+                width: 100%;
               }
 
               .bot-button {
@@ -449,6 +450,19 @@
                 margin: 0 7.5px;
                 padding: 8px;
                 width: 30%;
+              }
+
+              .bot-btn-attach {
+                align-items: center;
+                border: none;
+                border-radius: 8px;
+                cursor: pointer;
+                display: inline-flex;
+                height: 37px;
+                justify-content: center;
+                margin: 0 7.5px;
+                padding: 8px;
+                width: 7.5%;
               }
             }
           }
