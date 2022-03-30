@@ -607,6 +607,7 @@ class KonversoService {
      */
     buildHeaders() {
         this._token.subscribe((token) => {
+            console.log('-------MY NEW TOKEN----->', token);
             const bearer = 'Bearer ' + token;
             this.header = new HttpHeaders({
                 //'Content-Type': 'application/json',
