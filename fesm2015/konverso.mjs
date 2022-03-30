@@ -144,9 +144,9 @@ const parseTemplate = (template, tags) => {
         if (!isArray(tagsToCompile) || tagsToCompile.length !== 2) {
             throw new Error('Invalid tags: ' + tagsToCompile);
         }
-        openingTagRe = new RegExp(escapeRegExp(tagsToCompile[0]) + '\\s*');
-        closingTagRe = new RegExp('\\s*' + escapeRegExp(tagsToCompile[1]));
-        closingCurlyRe = new RegExp('\\s*' + escapeRegExp('}' + tagsToCompile[1]));
+        const openingTagRe = new RegExp(escapeRegExp(tagsToCompile[0]) + '\\s*');
+        const closingTagRe = new RegExp('\\s*' + escapeRegExp(tagsToCompile[1]));
+        const closingCurlyRe = new RegExp('\\s*' + escapeRegExp('}' + tagsToCompile[1]));
         return { openingTagRe, closingTagRe, closingCurlyRe };
     };
     let { openingTagRe, closingTagRe, closingCurlyRe } = compileTags(tags || BARBE.tags);
