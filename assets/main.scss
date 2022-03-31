@@ -618,19 +618,6 @@
               max-height: 200px;
               padding: 2.5% 2.5% 0.5% 2.5%;
 
-              .input-number-div {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-                width: 20%;
-              
-                .input-number-div-arrow {
-                  display: flex;
-                  flex-direction: column;
-                  width: 10%;
-                }
-              }
-
               input {
                 display: inline-block;
                 padding: 14px;
