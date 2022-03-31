@@ -1396,11 +1396,7 @@ class DesktopFullScreenComponent {
         });
     }
     changeNumber(value) {
-        console.log(this.userInput, value);
-        if (this.userInput == '' && value > 0) {
-            this.userInput = value.toString();
-        }
-        else if ((+this.userInput + value) > 1) {
+        if ((+this.userInput + value) > 0) {
             this.userInput = (+this.userInput + value).toString();
         }
     }
