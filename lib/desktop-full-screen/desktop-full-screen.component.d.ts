@@ -24,6 +24,7 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     userInput: string;
     currentPlaceHolder: string;
     sendBtn: string;
+    sendBtnMsg: string;
     select: string;
     changed: boolean;
     botListening: boolean;
