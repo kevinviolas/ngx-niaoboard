@@ -1430,6 +1430,7 @@ class DesktopFullScreenComponent {
         }
         console.log('-------> enter', this.LastBotAnswer?.text.includes('<number>') && this.LastBotAnswer?.text.includes('</number>'));
         if (this.LastBotAnswer?.text.includes('<number>') && this.LastBotAnswer?.text.includes('</number>')) {
+            this.userInput = '1';
             this.inputType = 'number';
             this.inputLimit = 999;
             this.currentPlaceHolder = this.NumberPlaceHolder[Math.floor(Math.random() * this.NumberPlaceHolder.length)];
