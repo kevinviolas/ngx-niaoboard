@@ -1491,8 +1491,8 @@ class DesktopFullScreenComponent {
         this.select = '';
         this.changed = false;
         this.botListening = false;
-        this.showWrapper = false;
-        this.showText = false;
+        this.showWrapper = true;
+        this.showText = true;
         this.inputType = defaultInputType;
         this.inputLimit = defaultInputLimit;
         this.newMessage = false;
@@ -1623,12 +1623,13 @@ class DesktopFullScreenComponent {
                 this.currentPlaceHolder = this.PlaceHolder[Math.floor(Math.random() * this.PlaceHolder.length)];
             }, 3000);
         }
-        setTimeout(() => {
+        /*setTimeout(() => {
             this.showWrapper = true;
         }, 2000);
+
         setTimeout(() => {
             this.showText = true;
-        }, 2500);
+        }, 2500);*/
         let t = setInterval(() => {
             if (document.querySelectorAll('.bot-answer')) {
                 let elems = document.querySelectorAll('.bot-answer');
