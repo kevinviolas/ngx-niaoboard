@@ -321,10 +321,10 @@
             vertical-align: middle;
             margin-top: 0;
             //opacity: 0;
-            animation: movetop 0.4s ease-in 1.8s both !important;
-            -moz-animation: movetop 0.4s ease-in 1.8s both !important; /* Firefox */
-            -webkit-animation: movetop 0.4s ease-in 1.8s both !important; /* Safari and Chrome */
-            -o-animation: movetop 0.4s ease-in 1.8s both !important; /* Opera */
+            /*animation: movetop 0.4s ease-in 1.8s both !important;
+            -moz-animation: movetop 0.4s ease-in 1.8s both !important;
+            -webkit-animation: movetop 0.4s ease-in 1.8s both !important;
+            -o-animation: movetop 0.4s ease-in 1.8s both !important;*/
 
             img {
               margin-left: auto;
@@ -399,10 +399,10 @@
               //position: absolute;
               width: 100%;
               bottom: 2%;
-              animation: fadeinanswer 0.4s ease-in 3.2s both;
-              -moz-animation: fadeinanswer 0.4s ease-in 3.2s both; /* Firefox */
-              -webkit-animation: fadeinanswer 0.4s ease-in 3.2s both; /* Safari and Chrome */
-              -o-animation: fadeinanswer 0.4s ease-in 3.2s both; /* Opera */
+              /*animation: fadeinanswer 0.4s ease-in 3.2s both;
+              -moz-animation: fadeinanswer 0.4s ease-in 3.2s both;
+              -webkit-animation: fadeinanswer 0.4s ease-in 3.2s both;
+              -o-animation: fadeinanswer 0.4s ease-in 3.2s both;*/
               grid-area: bot-input-wrapper;
   
               textarea {
