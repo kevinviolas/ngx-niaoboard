@@ -1,10 +1,11 @@
 import { EventEmitter, OnChanges, OnInit } from '@angular/core';
-import { DefaultAssets, OpenChatBotResponse, UserInput } from '../../interface/KonversoInterface';
+import { DefaultAssets, KonversoInterface, OpenChatBotResponse, UserInput } from '../../interface/KonversoInterface';
 import { KonversoService } from '../konverso.service';
 import { TranslateService } from '../translate.service';
 import * as i0 from "@angular/core";
 export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
-    private service;
+    translate: TranslateService;
+    service: KonversoService;
     AssistantMode: boolean;
     assets: DefaultAssets;
     firstVisit: boolean;
@@ -17,6 +18,7 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     IsMobile: boolean;
     showInput: boolean;
     NumberPlaceHolder: string[];
+    afterProcess: boolean;
     readySend: EventEmitter<boolean>;
     send: EventEmitter<UserInput>;
     sendBotCommand: EventEmitter<string>;
@@ -41,8 +43,10 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     private timer;
     btnScreen: string;
     nbAttachments: number;
+    config: KonversoInterface;
+    private days;
     changeNumber(value: number): void;
-    constructor(translate: TranslateService, service: KonversoService);
+    constructor(translate: TranslateService, service: KonversoService, config: KonversoInterface);
     ngOnChanges(): void;
     launchLoop(): void;
     looper(): void;
@@ -53,5 +57,5 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     scroll(scrollHeight: number): Promise<number>;
     byPassUserInput(botdata: string, i?: number): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DesktopFullScreenComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DesktopFullScreenComponent, "bot-full-screen", never, { "AssistantMode": "AssistantMode"; "assets": "assets"; "firstVisit": "firstVisit"; "firstUsageStory": "firstUsageStory"; "displayData": "displayData"; "disableUserInput": "disableUserInput"; "LastUserInput": "LastUserInput"; "LastBotAnswer": "LastBotAnswer"; "PlaceHolder": "PlaceHolder"; "IsMobile": "IsMobile"; "showInput": "showInput"; "NumberPlaceHolder": "NumberPlaceHolder"; }, { "readySend": "readySend"; "send": "send"; "sendBotCommand": "sendBotCommand"; "sendEvent": "sendEvent"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DesktopFullScreenComponent, "bot-full-screen", never, { "AssistantMode": "AssistantMode"; "assets": "assets"; "firstVisit": "firstVisit"; "firstUsageStory": "firstUsageStory"; "displayData": "displayData"; "disableUserInput": "disableUserInput"; "LastUserInput": "LastUserInput"; "LastBotAnswer": "LastBotAnswer"; "PlaceHolder": "PlaceHolder"; "IsMobile": "IsMobile"; "showInput": "showInput"; "NumberPlaceHolder": "NumberPlaceHolder"; "afterProcess": "afterProcess"; }, { "readySend": "readySend"; "send": "send"; "sendBotCommand": "sendBotCommand"; "sendEvent": "sendEvent"; }, never, never>;
 }

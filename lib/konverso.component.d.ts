@@ -8,6 +8,7 @@ export declare class KonversoComponent implements OnInit {
     ready: EventEmitter<boolean>;
     sended: EventEmitter<boolean>;
     showInput: boolean;
+    afterProcess: boolean;
     query: string;
     isMobile: boolean;
     assets: DefaultAssets;
@@ -29,5 +30,5 @@ export declare class KonversoComponent implements OnInit {
     sendBotCommand($event: string, push?: boolean): Promise<void>;
     private _isMobile;
     static ɵfac: i0.ɵɵFactoryDeclaration<KonversoComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KonversoComponent, "ngx-konverso", never, { "showInput": "showInput"; }, { "ready": "ready"; "sended": "sended"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KonversoComponent, "ngx-konverso", never, { "showInput": "showInput"; "afterProcess": "afterProcess"; }, { "ready": "ready"; "sended": "sended"; }, never, never>;
 }
