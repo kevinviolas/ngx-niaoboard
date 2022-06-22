@@ -45,6 +45,7 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     nbAttachments: number;
     config: KonversoInterface;
     private days;
+    hideInputNumber: boolean;
     changeNumber(value: number): void;
     constructor(translate: TranslateService, service: KonversoService, config: KonversoInterface);
     ngOnChanges(): void;
