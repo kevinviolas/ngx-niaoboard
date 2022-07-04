@@ -19,6 +19,7 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     showInput: boolean;
     NumberPlaceHolder: string[];
     afterProcess: boolean;
+    fileNb: number;
     readySend: EventEmitter<boolean>;
     send: EventEmitter<UserInput>;
     sendBotCommand: EventEmitter<string>;
@@ -57,5 +58,5 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     scroll(scrollHeight: number): Promise<number>;
     byPassUserInput(botdata: string, i?: number): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DesktopFullScreenComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DesktopFullScreenComponent, "bot-full-screen", never, { "AssistantMode": "AssistantMode"; "assets": "assets"; "firstVisit": "firstVisit"; "firstUsageStory": "firstUsageStory"; "displayData": "displayData"; "disableUserInput": "disableUserInput"; "LastUserInput": "LastUserInput"; "LastBotAnswer": "LastBotAnswer"; "PlaceHolder": "PlaceHolder"; "IsMobile": "IsMobile"; "showInput": "showInput"; "NumberPlaceHolder": "NumberPlaceHolder"; "afterProcess": "afterProcess"; }, { "readySend": "readySend"; "send": "send"; "sendBotCommand": "sendBotCommand"; "sendEvent": "sendEvent"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DesktopFullScreenComponent, "bot-full-screen", never, { "AssistantMode": "AssistantMode"; "assets": "assets"; "firstVisit": "firstVisit"; "firstUsageStory": "firstUsageStory"; "displayData": "displayData"; "disableUserInput": "disableUserInput"; "LastUserInput": "LastUserInput"; "LastBotAnswer": "LastBotAnswer"; "PlaceHolder": "PlaceHolder"; "IsMobile": "IsMobile"; "showInput": "showInput"; "NumberPlaceHolder": "NumberPlaceHolder"; "afterProcess": "afterProcess"; "fileNb": "fileNb"; }, { "readySend": "readySend"; "send": "send"; "sendBotCommand": "sendBotCommand"; "sendEvent": "sendEvent"; }, never, never>;
 }
