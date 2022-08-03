@@ -784,6 +784,7 @@ class TranslateService {
                 "AFTERNOON_ALL": 'Après-midi (tous)',
                 "ATTACHMENT": 'pièce jointe',
                 "ATTACHMENTS": 'pièces jointes',
+                "VALIDATE_AVAILABILITY": "Valider mes disponibilités",
             },
             'en': {
                 'GO': `Let's go`,
@@ -806,7 +807,8 @@ class TranslateService {
                 "MORNING_ALL": 'Morning (all)',
                 "AFTERNOON_ALL": 'Afternoon (all)',
                 "ATTACHMENT": 'attachment',
-                "ATTACHMENTS": 'attachments'
+                "ATTACHMENTS": 'attachments',
+                "VALIDATE_AVAILABILITY": "Validate availability",
             }
         };
     }
