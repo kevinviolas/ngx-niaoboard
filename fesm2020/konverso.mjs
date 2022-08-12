@@ -792,6 +792,7 @@ class TranslateService {
                 'SELECT': 'You must select an answer',
                 'SCREENSHOT': 'Screenshot',
                 'SEND': 'Validate impacted people number',
+                "MONDAY": 'Monday',
                 "TUESDAY": 'Tuesday',
                 "WEDNESDAY": 'Wednesday',
                 "THURSDAY": 'Thursday',
