@@ -1846,13 +1846,13 @@ class DesktopFullScreenComponent {
             afternoon: { all: true, monday: true, tuesday: true, wednesday: true, thursday: true, friday: true }
         };
         this.calendarKeyOverride = {
-            morning: 'cases.CREATE.MORNING_ALL',
-            afternoon: 'cases.CREATE.AFTERNOON_ALL',
-            monday: 'cases.CREATE.MONDAY',
-            tuesday: 'cases.CREATE.TUESDAY',
-            wednesday: 'cases.CREATE.WEDNESDAY',
-            thursday: 'cases.CREATE.THURSDAY',
-            friday: 'cases.CREATE.FRIDAY'
+            morning: 'MORNING_ALL',
+            afternoon: 'AFTERNOON_ALL',
+            monday: 'MONDAY',
+            tuesday: 'TUESDAY',
+            wednesday: 'WEDNESDAY',
+            thursday: 'THURSDAY',
+            friday: 'FRIDAY'
         };
         service.lang.subscribe((r) => {
             if (service.locale) {
