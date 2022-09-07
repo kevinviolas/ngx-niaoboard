@@ -1008,6 +1008,7 @@ class CustomCheckboxCalendarComponent {
         this.rows = [''];
         this.checked = {};
         this.calendar_value = {};
+        console.log(service.locale);
     }
     ngOnInit() {
         const formGroup = {};
