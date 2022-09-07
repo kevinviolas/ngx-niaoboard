@@ -2093,7 +2093,6 @@ class KonversoComponent {
         }
     }
     handleSendCalendar($event) {
-        console.log($event);
         this.sendCalendar.emit($event);
     }
     async send($event) {
