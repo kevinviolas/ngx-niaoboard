@@ -46,9 +46,38 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     nbAttachments: number;
     config: KonversoInterface;
     private days;
+    calendarAvailability: {};
+    calendarTemplate: {
+        morning: {
+            all: boolean;
+            monday: boolean;
+            tuesday: boolean;
+            wednesday: boolean;
+            thursday: boolean;
+            friday: boolean;
+        };
+        afternoon: {
+            all: boolean;
+            monday: boolean;
+            tuesday: boolean;
+            wednesday: boolean;
+            thursday: boolean;
+            friday: boolean;
+        };
+    };
+    calendarKeyOverride: {
+        morning: string;
+        afternoon: string;
+        monday: string;
+        tuesday: string;
+        wednesday: string;
+        thursday: string;
+        friday: string;
+    };
     changeNumber(value: number): void;
     constructor(translate: TranslateService, service: KonversoService, config: KonversoInterface);
     ngOnChanges(): void;
+    bindCalendar($event: any): void;
     launchLoop(): void;
     looper(): void;
     ngOnInit(): void;
