@@ -1814,6 +1814,7 @@ class DesktopFullScreenComponent {
         //console.log('bindCalendar $event', $event)
         delete $event.all;
         this.calendarAvailability = $event;
+        console.log(this.calendarAvailability);
     }
     launchLoop() {
         this.timer = setInterval(() => {
