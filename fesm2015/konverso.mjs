@@ -812,6 +812,7 @@ class TranslateService {
         };
     }
     translate(l, word) {
+        console.log(l, word);
         return this.lang[l][word];
     }
 }
@@ -1035,8 +1036,6 @@ class CustomCheckboxCalendarComponent {
         this.calendar_value = {};
     }
     ngOnInit() {
-        console.log(this.service.locale);
-        console.log('service locale');
         const formGroup = {};
         for (const part in this.calendarTemplate) {
             if (!formGroup[part]) {
@@ -1960,10 +1959,9 @@ class DesktopFullScreenComponent {
         }, 100);
     }
     bindCalendar($event) {
-        console.log('bindCalendar $event', $event);
+        //console.log('bindCalendar $event', $event)
         delete $event.all;
         this.calendarAvailability = $event;
-        console.log(this.service.locale);
     }
     launchLoop() {
         this.timer = setInterval(() => {
