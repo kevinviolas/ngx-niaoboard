@@ -7,6 +7,7 @@ export declare class KonversoComponent implements OnInit {
     _ready: EventEmitter<boolean>;
     ready: EventEmitter<boolean>;
     sended: EventEmitter<boolean>;
+    sendCalendar: EventEmitter<any>;
     showInput: boolean;
     afterProcess: boolean;
     fileNb: number;
@@ -27,9 +28,10 @@ export declare class KonversoComponent implements OnInit {
     constructor(service: KonversoService);
     private triggerKbotResponse;
     ngOnInit(): void;
+    handleSendCalendar($event: any): void;
     send($event: UserInput): Promise<boolean>;
     sendBotCommand($event: string, push?: boolean): Promise<void>;
     private _isMobile;
     static ɵfac: i0.ɵɵFactoryDeclaration<KonversoComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<KonversoComponent, "ngx-konverso", never, { "showInput": "showInput"; "afterProcess": "afterProcess"; "fileNb": "fileNb"; }, { "ready": "ready"; "sended": "sended"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<KonversoComponent, "ngx-konverso", never, { "showInput": "showInput"; "afterProcess": "afterProcess"; "fileNb": "fileNb"; }, { "ready": "ready"; "sended": "sended"; "sendCalendar": "sendCalendar"; }, never, never>;
 }
