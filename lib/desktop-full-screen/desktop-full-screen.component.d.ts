@@ -78,6 +78,7 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     constructor(translate: TranslateService, service: KonversoService, config: KonversoInterface);
     ngOnChanges(): void;
     bindCalendar($event: any): void;
+    getCalendar(): void;
     launchLoop(): void;
     looper(): void;
     ngOnInit(): void;
