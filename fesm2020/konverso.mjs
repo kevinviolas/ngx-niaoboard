@@ -1008,9 +1008,10 @@ class CustomCheckboxCalendarComponent {
         this.rows = [''];
         this.checked = {};
         this.calendar_value = {};
-        console.log(service.locale);
     }
     ngOnInit() {
+        console.log(this.service.locale);
+        console.log('service locale');
         const formGroup = {};
         for (const part in this.calendarTemplate) {
             if (!formGroup[part]) {
@@ -1815,6 +1816,7 @@ class DesktopFullScreenComponent {
         console.log('bindCalendar $event', $event);
         delete $event.all;
         this.calendarAvailability = $event;
+        console.log(this.service.locale);
     }
     launchLoop() {
         this.timer = setInterval(() => {
