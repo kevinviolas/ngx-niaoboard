@@ -1957,6 +1957,7 @@ class DesktopFullScreenComponent {
         this.calendarAvailability = $event;
     }
     getCalendar() {
+        console.log(this.calendarAvailability);
         this.sendCalendar.emit(this.calendarAvailability);
     }
     launchLoop() {
