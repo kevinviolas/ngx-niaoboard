@@ -1880,20 +1880,21 @@ class DesktopFullScreenComponent {
             }
         }, 100);
         //run.run();
-        setInterval(() => {
+        /*setInterval(() => {
             if (this.botListeningTimer > 0) {
                 this.botListeningTimer -= 1;
+
                 if (this.botListeningTimer > 0) {
                     document.getElementById('bot').className = 'a-cue-voice speaking';
                     document.getElementById('bot-icon').className = 'a-cue-icon speakingicon';
-                }
-                else {
+                } else {
                     document.getElementById('bot').className = 'a-cue-voice';
                     document.getElementById('bot-icon').className = 'a-cue-icon';
                 }
+
                 this.botListening = this.botListeningTimer > 0;
             }
-        }, 500);
+        }, 500);*/
     }
     userWriting(key) {
         if (key.code === 'Enter') {
