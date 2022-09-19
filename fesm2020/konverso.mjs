@@ -1717,6 +1717,7 @@ class DesktopFullScreenComponent {
         }
     }
     ngOnChanges() {
+        console.log(this.displayData);
         if (this.afterProcess) {
             this.LastUserInput = null;
             this.LastBotAnswer.text = this.config.AfterProcessScenario.BotMessage[this.service.locale];
@@ -2101,6 +2102,7 @@ class KonversoComponent {
         this.sended.emit(true);
         this.LastBotAnswer.text = '<br>' + DotLoaderTemplate(this.service.ColorSet.Primary);
         console.log($event);
+        console.log(parseInt($event.message));
         if (parseInt($event.message) == NaN) {
             this.History.push($event);
             console.log(this.History);
