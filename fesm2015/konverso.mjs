@@ -2262,7 +2262,7 @@ class KonversoComponent {
             if (this.AssistantMode) {
                 if (this.LastUserInput) {
                     if (parseInt($event.message) == NaN) {
-                        this.LastUserInput.message += ' ' + $event.message;
+                        this.LastUserInput.message += ' ' + $event.message.replace('\n', '<br>');
                         this.LastUserInput.date = $event.date;
                     }
                 }
