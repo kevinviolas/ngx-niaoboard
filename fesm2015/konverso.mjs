@@ -2259,7 +2259,7 @@ class KonversoComponent {
             if (parseInt($event.message) == NaN) {
                 this.History.push($event);
             }
-            console.log(parseInt($event.message));
+            //console.log(parseInt($event.message));
             if (this.AssistantMode) {
                 if (this.LastUserInput) {
                     if (parseInt($event.message) == NaN) {
@@ -2281,7 +2281,6 @@ class KonversoComponent {
                 this.History[index].error = true;
             });
             this.triggerKbotResponse(response);
-            console.log(this.History);
         });
     }
     sendBotCommand($event, push = true) {
@@ -2300,6 +2299,7 @@ class KonversoComponent {
             else {
                 this.disableUserInput = false;
             }
+            console.log(response);
             if (response && response.response && push) {
                 this.LastBotAnswer = response.response;
                 this.History.push(response.response);
