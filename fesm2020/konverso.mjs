@@ -2126,6 +2126,7 @@ class KonversoComponent {
             this.History[index].error = true;
         });
         this.triggerKbotResponse(response);
+        console.log(this.History);
     }
     async sendBotCommand($event, push = true) {
         this.LastBotAnswer.text = '<br>' + DotLoaderTemplate(this.service.ColorSet.Primary);

@@ -2281,6 +2281,7 @@ class KonversoComponent {
                 this.History[index].error = true;
             });
             this.triggerKbotResponse(response);
+            console.log(this.History);
         });
     }
     sendBotCommand($event, push = true) {
