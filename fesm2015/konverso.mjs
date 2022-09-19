@@ -1868,6 +1868,7 @@ class DesktopFullScreenComponent {
     }
     ngOnChanges() {
         var _a, _b, _c, _d, _e, _f;
+        console.log(this.LastUserInput);
         if (this.afterProcess) {
             this.LastUserInput = null;
             this.LastBotAnswer.text = this.config.AfterProcessScenario.BotMessage[this.service.locale];
@@ -2254,10 +2255,8 @@ class KonversoComponent {
             this.sended.emit(true);
             this.LastBotAnswer.text = '<br>' + DotLoaderTemplate(this.service.ColorSet.Primary);
             console.log($event);
-            console.log(parseInt($event.message));
             if (parseInt($event.message) == NaN) {
                 this.History.push($event);
-                console.log(this.History);
             }
             //console.log(parseInt($event.message));
             if (this.AssistantMode) {
@@ -2274,6 +2273,7 @@ class KonversoComponent {
             else {
                 this.LastUserInput = $event;
             }
+            console.log(this.LastUserInput);
             const index = this.History.length - 1;
             const response = yield this.service.send($event.message).catch((err) => {
                 console.log('We got an error ', err);
