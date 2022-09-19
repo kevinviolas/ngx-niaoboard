@@ -2113,13 +2113,13 @@ class KonversoComponent {
             }
             else {
                 this.LastUserInput = $event;
-                this.LastUserInput.message += ' ' + $event.message.replace('\n', '<br>');
+                this.LastUserInput.message = ' ' + $event.message.replace('\n', '<br>');
                 this.LastUserInput.date = $event.date;
             }
         }
         else {
             this.LastUserInput = $event;
-            this.LastUserInput.message += ' ' + $event.message.replace('\n', '<br>');
+            this.LastUserInput.message = ' ' + $event.message.replace('\n', '<br>');
             this.LastUserInput.date = $event.date;
         }
         console.log(this.LastUserInput);
