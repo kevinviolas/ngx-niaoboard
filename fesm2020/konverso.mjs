@@ -2100,6 +2100,7 @@ class KonversoComponent {
         }
         this.sended.emit(true);
         this.LastBotAnswer.text = '<br>' + DotLoaderTemplate(this.service.ColorSet.Primary);
+        console.log($event);
         if (parseInt($event.message) == NaN) {
             this.History.push($event);
         }
