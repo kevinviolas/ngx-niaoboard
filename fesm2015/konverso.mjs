@@ -2262,19 +2262,19 @@ class KonversoComponent {
             if (this.AssistantMode) {
                 if (this.LastUserInput) {
                     if (parseInt($event.message) == NaN) {
-                        this.LastUserInput.message += ' ' + $event.message.replace('\n', '<br>');
+                        this.LastUserInput.message += ' ' + $event.message.replace(/\n/g, '<br>');
                         this.LastUserInput.date = $event.date;
                     }
                 }
                 else {
                     this.LastUserInput = $event;
-                    this.LastUserInput.message = ' ' + $event.message.replace('\n', '<br>');
+                    this.LastUserInput.message = ' ' + $event.message.replace(/\n/g, '<br>');
                     this.LastUserInput.date = $event.date;
                 }
             }
             else {
                 this.LastUserInput = $event;
-                this.LastUserInput.message = ' ' + $event.message.replace('\n', '<br>');
+                this.LastUserInput.message = ' ' + $event.message.replace(/\n/g, '<br>');
                 this.LastUserInput.date = $event.date;
             }
             console.log(this.LastUserInput);
