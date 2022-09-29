@@ -2,10 +2,12 @@ import { EventEmitter, OnChanges, OnInit } from '@angular/core';
 import { DefaultAssets, KonversoInterface, OpenChatBotResponse, UserInput } from '../../interface/KonversoInterface';
 import { KonversoService } from '../konverso.service';
 import { TranslateService } from '../translate.service';
+import { AnimationsService } from 'ngx-nowbrains-animations';
 import * as i0 from "@angular/core";
 export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     translate: TranslateService;
     service: KonversoService;
+    animations: AnimationsService;
     AssistantMode: boolean;
     assets: DefaultAssets;
     firstVisit: boolean;
@@ -75,8 +77,12 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
         thursday: string;
         friday: string;
     };
+    animationTTX: number;
+    animationTtxAdd: number;
+    animationSlideValue: number;
+    animationSlideValueAdd: number;
     changeNumber(value: number): void;
-    constructor(translate: TranslateService, service: KonversoService, config: KonversoInterface);
+    constructor(translate: TranslateService, service: KonversoService, animations: AnimationsService, config: KonversoInterface);
     ngOnChanges(): void;
     bindCalendar($event: any): void;
     getCalendar(): void;
