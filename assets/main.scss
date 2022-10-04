@@ -217,6 +217,10 @@
         //color: #171F26 !important;
         display: inline-block;
         //margin-right: 25px;
+        animation: movetop2 0.3s ease-in 0.3s both !important;
+        -moz-animation: movetop2 0.3s ease-in 0.3s both !important; /* Firefox */
+        -webkit-animation: movetop2 0.3s ease-in 0.3s both !important; /* Safari and Chrome */
+        -o-animation: movetop2 0.3s ease-in 0.3s both !important; /* Opera */
       }
 
       .bot-container {
@@ -343,58 +347,16 @@
             overflow: auto !important;
 
             .bot-answer {
-              width: 820px;
+              width: 600px;
               text-align: center;
               margin: auto;
               font-size: 18px;
+              //height: 60%;
               grid-area: bot-answer;
-
-              &__text {
-                height: 54px;
-
-                > span {
-                  position: absolute;
-                  top: 0;
-                  left: 0;
-                }
-              }  
-              
-              &__buttons {
-
-                height: 44px;
-
-                > button {
-                  position: relative;
-                  top: 0;
-                }
-              }
-
-              &__disable-input {
-
-                height: 27px;
-
-                > div {
-                  position: relative;
-                  top: 0;
-                  font-size: 1rem;
-                }
-              }
-
-              > span {
-                overflow: hidden;
-                > p {
-                  margin: 0;
-                  overflow: hidden;
-                }
-              }
   
-              .bot-input-disable {
-                width: 100%;
-                max-width: 600px;
-                margin: 35px auto;
-                max-height: 200px;
-                text-align: center;
-              }  
+              /*span {
+                color: #FFFFFF !important;
+              }*/
             }
   
             .user-input {
@@ -435,25 +397,29 @@
   
             .bot-input-wrapper {
               text-align: center;
+              //position: absolute;
               width: 100%;
               bottom: 2%;
+              /*animation: fadeinanswer 0.4s ease-in 3.2s both;
+              -moz-animation: fadeinanswer 0.4s ease-in 3.2s both;
+              -webkit-animation: fadeinanswer 0.4s ease-in 3.2s both;
+              -o-animation: fadeinanswer 0.4s ease-in 3.2s both;*/
               grid-area: bot-input-wrapper;
-
-              .bot-input {
-                height: 204px;
-
-                &__controls {
-
-                }
-              }
   
               textarea {
                 height: 139px;
                 text-align: left;
                 display: inline-block;
                 padding: 14px;
+                //color: black;
+                //width: calc(100% - 28px);
                 width: 100%;
+                //margin: auto;
+                //background: #E5E8EE 0% 0% no-repeat padding-box;
+                //background: transparent;
+                //border: 2px solid #171F26;
                 border-radius: 8px;
+                //margin-right: 10px;
                 margin-bottom: 15px;
                 resize: none;
               }
@@ -600,7 +566,6 @@
                 direction: ltr;
                 grid-area: user-input; 
 
-
                 .data {
                   padding: 10px 20px;
                   border-radius: 25px 25px 0px 25px;
@@ -721,7 +686,6 @@
 
           }
           .bot-assistant-wrapper {
-
             .bot-answer {
               width: 70vw !important;
               text-align: center;
