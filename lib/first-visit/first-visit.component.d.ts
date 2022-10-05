@@ -16,5 +16,5 @@ export declare class FirstVisitComponent implements OnInit {
     goTo(pos: number): void;
     start(): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<FirstVisitComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<FirstVisitComponent, "bot-first-visit", never, { "firstUsageStory": "firstUsageStory"; "assets": "assets"; }, { "ready": "ready"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<FirstVisitComponent, "bot-first-visit", never, { "firstUsageStory": "firstUsageStory"; "assets": "assets"; }, { "ready": "ready"; }, never, never, false>;
 }

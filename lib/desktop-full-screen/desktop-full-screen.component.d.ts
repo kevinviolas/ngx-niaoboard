@@ -2,10 +2,12 @@ import { EventEmitter, OnChanges, OnInit } from '@angular/core';
 import { DefaultAssets, KonversoInterface, OpenChatBotResponse, UserInput } from '../../interface/KonversoInterface';
 import { KonversoService } from '../konverso.service';
 import { TranslateService } from '../translate.service';
+import { AnimationsService } from 'ngx-nowbrains-animations';
 import * as i0 from "@angular/core";
 export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     translate: TranslateService;
     service: KonversoService;
+    animations: AnimationsService;
     AssistantMode: boolean;
     assets: DefaultAssets;
     firstVisit: boolean;
@@ -25,6 +27,7 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     sendBotCommand: EventEmitter<string>;
     sendEvent: EventEmitter<string>;
     sendCalendar: EventEmitter<any>;
+    openUpload: EventEmitter<boolean>;
     userInput: string;
     currentPlaceHolder: string;
     sendBtn: string;
@@ -75,8 +78,12 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
         thursday: string;
         friday: string;
     };
+    animationTTX: number;
+    animationTtxAdd: number;
+    animationSlideValue: number;
+    animationSlideValueAdd: number;
     changeNumber(value: number): void;
-    constructor(translate: TranslateService, service: KonversoService, config: KonversoInterface);
+    constructor(translate: TranslateService, service: KonversoService, animations: AnimationsService, config: KonversoInterface);
     ngOnChanges(): void;
     bindCalendar($event: any): void;
     getCalendar(): void;
@@ -89,5 +96,5 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     scroll(scrollHeight: number): Promise<number>;
     byPassUserInput(botdata: string, i?: number): void;
     static ɵfac: i0.ɵɵFactoryDeclaration<DesktopFullScreenComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<DesktopFullScreenComponent, "bot-full-screen", never, { "AssistantMode": "AssistantMode"; "assets": "assets"; "firstVisit": "firstVisit"; "firstUsageStory": "firstUsageStory"; "displayData": "displayData"; "disableUserInput": "disableUserInput"; "LastUserInput": "LastUserInput"; "LastBotAnswer": "LastBotAnswer"; "PlaceHolder": "PlaceHolder"; "IsMobile": "IsMobile"; "showInput": "showInput"; "NumberPlaceHolder": "NumberPlaceHolder"; "afterProcess": "afterProcess"; "fileNb": "fileNb"; }, { "readySend": "readySend"; "send": "send"; "sendBotCommand": "sendBotCommand"; "sendEvent": "sendEvent"; "sendCalendar": "sendCalendar"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<DesktopFullScreenComponent, "bot-full-screen", never, { "AssistantMode": "AssistantMode"; "assets": "assets"; "firstVisit": "firstVisit"; "firstUsageStory": "firstUsageStory"; "displayData": "displayData"; "disableUserInput": "disableUserInput"; "LastUserInput": "LastUserInput"; "LastBotAnswer": "LastBotAnswer"; "PlaceHolder": "PlaceHolder"; "IsMobile": "IsMobile"; "showInput": "showInput"; "NumberPlaceHolder": "NumberPlaceHolder"; "afterProcess": "afterProcess"; "fileNb": "fileNb"; }, { "readySend": "readySend"; "send": "send"; "sendBotCommand": "sendBotCommand"; "sendEvent": "sendEvent"; "sendCalendar": "sendCalendar"; "openUpload": "openUpload"; }, never, never, false>;
 }

@@ -30,6 +30,6 @@ export declare class CustomCheckboxCalendarComponent implements OnInit {
     private observer;
     private process;
     static ɵfac: i0.ɵɵFactoryDeclaration<CustomCheckboxCalendarComponent, never>;
-    static ɵcmp: i0.ɵɵComponentDeclaration<CustomCheckboxCalendarComponent, "custom-checkbox-calendar", never, { "calendarTemplate": "calendarTemplate"; "columnOverride": "columnOverride"; "state": "state"; }, { "calendarChange": "calendarChange"; }, never, never>;
+    static ɵcmp: i0.ɵɵComponentDeclaration<CustomCheckboxCalendarComponent, "custom-checkbox-calendar", never, { "calendarTemplate": "calendarTemplate"; "columnOverride": "columnOverride"; "state": "state"; }, { "calendarChange": "calendarChange"; }, never, never, false>;
 }
 export {};
