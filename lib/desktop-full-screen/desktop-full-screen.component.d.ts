@@ -4,6 +4,8 @@ import { KonversoService } from '../konverso.service';
 import { TranslateService } from '../translate.service';
 import { AnimationsService } from 'ngx-nowbrains-animations';
 import * as i0 from "@angular/core";
+export declare const FadeSlideInOutKonversoTranslateOutTest: import("@angular/animations").AnimationTriggerMetadata;
+export declare const FadeSlideInOutKonversoHeightTest: import("@angular/animations").AnimationTriggerMetadata;
 export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     translate: TranslateService;
     service: KonversoService;
@@ -82,6 +84,7 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     animationTtxAdd: number;
     animationSlideValue: number;
     animationSlideValueAdd: number;
+    animationHeightTTX: number;
     changeNumber(value: number): void;
     constructor(translate: TranslateService, service: KonversoService, animations: AnimationsService, config: KonversoInterface);
     ngOnChanges(): void;
