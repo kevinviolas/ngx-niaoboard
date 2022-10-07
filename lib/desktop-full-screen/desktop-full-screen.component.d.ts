@@ -80,6 +80,8 @@ export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
         thursday: string;
         friday: string;
     };
+    showUserInputControls: boolean;
+    showUserInvitation: boolean;
     animationTTX: number;
     animationTtxAdd: number;
     animationSlideValue: number;

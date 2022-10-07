@@ -332,6 +332,7 @@
           }
 
           .bot-discussion-wrapper {
+            min-width: 820px;
             display: grid; 
             grid-template-columns: 1fr; 
             grid-template-rows: 0.3fr 1fr 0.7fr;
@@ -430,6 +431,16 @@
                 bottom: -1%;
                 color: #000;
                 font-size: 10px;
+              }
+
+              &-container-outer {
+                
+                max-height: 300px;
+
+                &-hidden {
+                  transition: max-height 1.5s ease-out .15s;
+                  max-height: 0px !important;
+                }
               }
             }
   
