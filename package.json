@@ -6,7 +6,9 @@
     "@angular/core": ">12.x <14.x"
   },
   "dependencies": {
-    "tslib": ">=1.10.0"
+    "tslib": ">=1.10.0",
+    "ngx-nowbrains-animations": "github:sfvii/ngx-nowbrains-animations",
+    "nowboard-icon": "github:SFVII/ngx-nb-icon"
   },
   "module": "fesm2015/konverso.mjs",
   "es2020": "fesm2020/konverso.mjs",

@@ -60,6 +60,18 @@ export interface KonversoInterface {
     InputNumberPlaceHolder: WildCardObjectArray;
     AfterProcess: boolean;
     AfterProcessScenario: any;
+    ModalAttachmentText: {
+        fr: {
+            SEND_ME_YOUR_ATTACHMENTS: string;
+            DROP_PHOTO: string;
+            I_FINISHED: string;
+        };
+        en: {
+            SEND_ME_YOUR_ATTACHMENTS: string;
+            DROP_PHOTO: string;
+            I_FINISHED: string;
+        };
+    };
 }
 /**
  *  Inteface setting for authentication

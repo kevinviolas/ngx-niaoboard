@@ -27,6 +27,7 @@ export declare class KonversoService {
     private user;
     private header;
     private endpoint;
+    localModalAttachments: any;
     constructor(config: KonversoInterface, http: HttpClient);
     /**
      * Send Query To backend server and get a response

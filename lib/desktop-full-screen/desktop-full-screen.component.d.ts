@@ -6,6 +6,7 @@ import { AnimationsService } from 'ngx-nowbrains-animations';
 import * as i0 from "@angular/core";
 export declare const FadeSlideInOutKonversoTranslateOutTest: import("@angular/animations").AnimationTriggerMetadata;
 export declare const FadeSlideInOutKonversoHeightTest: import("@angular/animations").AnimationTriggerMetadata;
+export declare const FadeSlideInOutKonversoHeightOutTest: import("@angular/animations").AnimationTriggerMetadata;
 export declare class DesktopFullScreenComponent implements OnChanges, OnInit {
     translate: TranslateService;
     service: KonversoService;
