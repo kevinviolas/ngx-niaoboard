@@ -878,7 +878,7 @@ class TranslateService {
                 "AFTERNOON_ALL": 'Après-midi (tous)',
                 "ATTACHMENT": 'pièce jointe',
                 "ATTACHMENTS": 'pièces jointes',
-                "VALIDATE_AVAILABILITY": "Valider mes disponibilités",
+                "VALIDATE_AVAILABILITY": "Valider mes préférences de rappel",
             },
             'en': {
                 'GO': `Let's go`,
@@ -903,7 +903,7 @@ class TranslateService {
                 "AFTERNOON_ALL": 'Afternoon (all)',
                 "ATTACHMENT": 'attachment',
                 "ATTACHMENTS": 'attachments',
-                "VALIDATE_AVAILABILITY": "Validate availability",
+                "VALIDATE_AVAILABILITY": "Validate my reminder preferences",
             }
         };
     }
